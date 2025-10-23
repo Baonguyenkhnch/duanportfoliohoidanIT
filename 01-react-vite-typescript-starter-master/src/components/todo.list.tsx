@@ -1,6 +1,12 @@
+import { useState } from "react"
 import TodoData from "./todo.data"
 import TodoInput from "./todo.input"
 
+interface ITodo {
+        id :number ;
+        title :string ;
+        isComplete :boolean
+}
 const TodoList = () => {
  const todos =[
     
@@ -20,6 +26,7 @@ const TodoList = () => {
         isComplete: true
     }
  ]
+ const [listTodo,setListTodo]=useState<ITodo/>[](todos)
  return (
   <div style={{width:"600px",margin:"50px auto",
   border:"1px solid #ccc",
@@ -40,10 +47,10 @@ const TodoList = () => {
     // name="your todo"
     />
     <TodoData
-    todos ={todos}
-    owner ={"hoidanIT"}
-    age ={25}
-    isDeveloper={true}
+    todos ={listTodo}
+    // owner ={"hoidanIT"}
+    // age ={25}
+    // isDeveloper={true}
     />
   </div>
  )
