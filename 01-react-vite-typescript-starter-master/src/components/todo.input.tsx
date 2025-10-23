@@ -1,12 +1,17 @@
+import { useState } from "react"
+
 interface IProps {
     name? :string
 }
 
 const TodoInput = (props:IProps) => {
-    const {name="please type your todo"}=props
+    const [todo,setTodo]=useState<string>("")
+
+        // const [todo,setTodo]=useState<number>(0)
+
   return (
     <div style={{display:"flex",gap:15,marginBottom:20}}>
-        <input value={name} type="text"/>
+        <input type="text"/>
         <button>Add to</button>
     </div>
   )
