@@ -1,6 +1,6 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import App from './layout'
+import Layout from './layout'   // ✅ đúng tên
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
